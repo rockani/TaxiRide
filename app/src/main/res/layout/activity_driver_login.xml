@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:hint="email"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintBottom_toTopOf="@+id/password"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="password"
+            android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="8dp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="401dp" />
@@ -40,7 +42,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginHorizontal="32dp"
             app:layout_constraintBottom_toTopOf="@+id/registration"
-            android:background="@drawable/button_login_background"/>
+            android:background="@drawable/button_login_background"
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/registration"
@@ -50,7 +53,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/button_reg_background"
             app:layout_constraintBottom_toBottomOf="parent"
-
+            android:textColor="@color/white"
             android:layout_marginHorizontal="32dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
