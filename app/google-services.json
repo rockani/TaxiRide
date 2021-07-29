@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "71558116135",
+    "firebase_url": "https://mytaxiride-321306-default-rtdb.firebaseio.com",
+    "project_id": "mytaxiride-321306",
+    "storage_bucket": "mytaxiride-321306.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71558116135:android:6c99e271a8ee9351512f02",
+        "android_client_info": {
+          "package_name": "com.example.mytaxiride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71558116135-0tc3q24efncblr6n0263qq33vu887r0s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mytaxiride",
+            "certificate_hash": "a0362b2821b8801711f2f4d6471748058fcd895d"
+          }
+        },
+        {
+          "client_id": "71558116135-q841b3s9694ncsoeebfnqh5vepvq7pgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7Kr8C0E88uVzMQJEghVya-BXYpUoRaQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71558116135-q841b3s9694ncsoeebfnqh5vepvq7pgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
