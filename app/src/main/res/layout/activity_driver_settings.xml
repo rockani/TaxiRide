@@ -58,14 +58,19 @@
     </RadioGroup>
 
     <Button
+        android:layout_marginVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/confirm"
-        android:text="confirm"/>
+        android:text="confirm"
+        android:background="@drawable/button_login_background"
+        />
     <Button
+        android:layout_marginVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/back"
-        android:text="back"/>
+        android:text="back"
+        android:background="@drawable/button_reg_background"/>
 
 </LinearLayout>
