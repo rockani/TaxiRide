@@ -12,6 +12,9 @@ import android.os.Looper;
 
 import android.os.Bundle;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -20,8 +23,12 @@ import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -51,6 +58,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -65,7 +73,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DriverMapActivity extends FragmentActivity implements OnMapReadyCallback, RoutingListener {
+public class DriverMapActivity extends  FragmentActivity implements OnMapReadyCallback, RoutingListener {
 
     private GoogleMap mMap;
     Location mLastLocation;
@@ -74,7 +82,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
     private FusedLocationProviderClient mFusedLocationClient;
 
 
-    private Button mLogout, mSettings, mRideStatus, mHistory;
+    private Button mLogout, mSettings, mRideStatus; FloatingActionButton mHistory;
 
     private Switch mWorkingSwitch;
 
@@ -94,10 +102,12 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
 
     private TextView mCustomerName, mCustomerPhone, mCustomerDestination;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_map);
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         polylines = new ArrayList<>();
 
@@ -105,6 +115,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+
         mapFragment.getMapAsync(this);
 
 
@@ -132,7 +143,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         mSettings = (Button) findViewById(R.id.settings);
         mLogout = (Button) findViewById(R.id.logout);
         mRideStatus = (Button) findViewById(R.id.rideStatus);
-        mHistory = (Button) findViewById(R.id.history);
+        mHistory = (FloatingActionButton) findViewById(R.id.history);
         mRideStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -388,6 +399,7 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
                 checkLocationPermission();
             }
         }
+        //googleMap.getUiSettings().setZoomControlsEnabled(true);
     }
 
 
@@ -542,5 +554,8 @@ public class DriverMapActivity extends FragmentActivity implements OnMapReadyCal
         }
         polylines.clear();
     }
+
+
+
 
 }

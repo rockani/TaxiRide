@@ -46,6 +46,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -66,7 +67,7 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
 
     private FusedLocationProviderClient mFusedLocationClient;
 
-    private Button mLogout, mRequest, mSettings, mHistory;
+    private FloatingActionButton mLogout, mSettings,mHistory; private Button mRequest ;
 
     private LatLng pickupLocation;
 
@@ -116,10 +117,10 @@ public class CustomerMapActivity extends FragmentActivity implements OnMapReadyC
         mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         mRadioGroup.check(R.id.UberX);
 
-        mLogout = (Button) findViewById(R.id.logout);
+        mLogout = (FloatingActionButton) findViewById(R.id.logout);
         mRequest = (Button) findViewById(R.id.request);
-        mSettings = (Button) findViewById(R.id.settings);
-        mHistory = (Button) findViewById(R.id.history);
+        mSettings =  findViewById(R.id.settings);
+        mHistory =  findViewById(R.id.history);
 
         mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
